@@ -49,11 +49,11 @@ if (typeof jQuery === 'undefined') {
         function iterateUl() {
             $('.sortedm2m-items').each(function () {
                 var ul = $(this);
-
-                prepareUl(ul);
+                if($.trim(ul.html()))
+                    prepareUl(ul);
                 ul.removeClass('hide');
             });
-        }
+         }
 
         $(".add-row a").click(iterateUl);
 
