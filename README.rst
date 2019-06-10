@@ -1,8 +1,13 @@
-================
-django-sortedm2m
-================
+=================
+django-sorted-m2m
+=================
 
-|build-status|
+|pypi-badge| |build-status|
+
+This project is a fork of `django-sortedm2m <http://github.com/gregmuellegger/django-sortedm2m>`_ with added support of Django 2.2 thanks to the code of `@joehybird <https://github.com/joehybird>`_.
+It is published on PyPI under the name *django-sorted-m2m* (note the additional - betweeen sorted and m2m)
+
+------------
 
 ``sortedm2m`` is a drop-in replacement for django's own ``ManyToManyField``.
 The provided ``SortedManyToManyField`` behaves like the original one but
@@ -27,7 +32,7 @@ provided by this package as drop in replacement for django's
 Requirements
 ============
 
-**django-sortedm2m** runs on Python 2.7, 3.6, 3.7 and up. Django 1.11 and up
+**django-sorted-m2m** runs on Python 2.7, 3.6, 3.7 and up. Django 1.11 and up
 is required
 
 Usage
@@ -166,7 +171,7 @@ Contribute
 You can find the latest development version on github_. Get there and fork it,
 file bugs or send me nice wishes.
 
-.. _github: http://github.com/gregmuellegger/django-sortedm2m
+.. _github: https://github.com/Ponytech/django-sorted-m2m
 
 Running the tests
 -----------------
@@ -196,13 +201,13 @@ Get in touch
 Feel free to drop me a message about critique or feature requests. You can get
 in touch with me by mail_ or twitter_.
 
-.. _mail: mailto:gregor@muellegger.de
-.. _twitter: http://twitter.com/gregmuellegger
+.. _mail: mailto:hello@ponytech.net
+.. _twitter: http://twitter.com/Ponytech_net
 
-.. |pypi-badge| image:: https://img.shields.io/pypi/v/django-sortedm2m.svg
+.. |pypi-badge| image:: https://img.shields.io/pypi/v/django-sorted-m2m.svg
    :alt: PyPI Release
-   :target: https://pypi.python.org/pypi/django-sortedm2m
+   :target: https://pypi.python.org/pypi/django-sorted-m2m
 
-.. |build-status| image:: https://travis-ci.org/gregmuellegger/django-sortedm2m.png
+.. |build-status| image:: https://travis-ci.org/Ponytech/django-sorted-m2m.png
    :alt: Build Status
-   :target: https://travis-ci.org/gregmuellegger/django-sortedm2m
+   :target: https://travis-ci.org/Ponytech/django-sorted-m2m

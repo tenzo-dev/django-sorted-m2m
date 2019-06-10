@@ -59,9 +59,9 @@ long_description = '\n\n'.join((
 ))
 
 setup(
-    name = 'django-sortedm2m',
+    name = 'django-sorted-m2m',
     version = get_version('sortedm2m'),
-    url = 'http://github.com/gregmuellegger/django-sortedm2m',
+    url = 'https://github.com/Ponytech/django-sorted-m2m',
     license = 'BSD',
     description =
         'Drop-in replacement for django\'s many to many field with '

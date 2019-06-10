@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.5.1 (in development)
-----------------------
+2.0.0
+-----
 
 - Drop support until Django 1.5 to 1.10
 - Drop support of python 2.6, 3.3, 3.4 & pypy
