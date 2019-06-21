@@ -8,6 +8,8 @@ from django.utils.encoding import force_text
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 from django.utils.six import string_types
+from django.urls import reverse
+from django.contrib.contenttypes.models import ContentType
 
 
 class SortedCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
@@ -39,6 +41,8 @@ class SortedCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
 
         selected = []
         unselected = []
+        model = self.choices.queryset.model()
+        content_type = ContentType.objects.get_for_model(model.__class__)
 
         for i, (option_value, option_label) in enumerate(chain(self.choices, choices)):
             # If an ID attribute was given, add a numeric index as a suffix,
@@ -48,12 +52,23 @@ class SortedCheckboxSelectMultiple(forms.CheckboxSelectMultiple):
                 label_for = ' for="%s"' % conditional_escape(final_attrs['id'])
             else:
                 label_for = ''
+                
+            url = reverse(
+                f"admin:{content_type.app_label}_{content_type.model}_change",
+                args=(option_value,),
+            )
 
             cb = forms.CheckboxInput(final_attrs, check_test=lambda value: value in str_values)
             option_value = force_text(option_value)
             rendered_cb = cb.render(name, option_value)
             option_label = conditional_escape(force_text(option_label))
-            item = {'label_for': label_for, 'rendered_cb': rendered_cb, 'option_label': option_label, 'option_value': option_value}
+            item = {
+                'label_for': label_for,
+                'rendered_cb': rendered_cb,
+                'option_label': option_label,
+                'option_value': option_value,
+                'url': url,
+            }
             if option_value in str_values:
                 selected.append(item)
             else:
