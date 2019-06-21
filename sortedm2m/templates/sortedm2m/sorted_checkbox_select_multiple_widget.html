@@ -8,11 +8,11 @@
     </p>
     <ul class="sortedm2m-items">
     {% for row in selected %}
-        <li class="sortedm2m-item"><label{{ row.label_for|safe }}>{{ row.rendered_cb }} {{ row.option_label }}</label></li>
+        <li class="sortedm2m-item"><label{{ row.label_for|safe }}>{{ row.rendered_cb }} {{ row.option_label }} <a href="{{ row.url }}" target="_blank"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a></label></li>
     {% endfor %}
 
     {% for row in unselected %}
-        <li class="sortedm2m-item"><label{{ row.label_for|safe }}>{{ row.rendered_cb }} {{ row.option_label }}</label></li>
+        <li class="sortedm2m-item"><label{{ row.label_for|safe }}>{{ row.rendered_cb }} {{ row.option_label }} <a href="{{ row.url }}" target="_blank"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a></label></li>
     {% endfor %}
     </ul>
 
